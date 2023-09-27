@@ -10,8 +10,8 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get('/data', (req, res) => {
-    res.json({ message: "Hello from the backend! hohohoho!" });
+app.get('/profile', (req, res) => {
+    res.json({ message: "Hello from the backend! hohohoho! - request : profile" });
 });
 
 app.listen(port, () => {
