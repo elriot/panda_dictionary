@@ -17,7 +17,7 @@ const port = process.env.PORT || 3001;
 //         createData(3, "https://placekitten.com/64/64", "aibao", "130713", "girl", "ceo"),
 //     ]);
 // });
-console.log("hello!!!");
+// console.log("hello!!! from server!");
 app.listen(port, () => {
-    console.log(`Listen on port ${port} hehehe`);
+    // console.log(`Listen on port ${port} hehehe`);
 })
