@@ -1,23 +1,19 @@
+const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 const app = express();
 const port = process.env.PORT || 3001;
 
-// function createData(id, image, name, birthday, gender, job) {
-//     return { id, image, name, birthday, gender, job };
-// }
+app.use(cors());
 
-// app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
-// app.get('/api/customer', (req, res) => {
-//     res.send([
-//         createData(1, "https://placekitten.com/64/64", "fufubao", "200720", "girl", "student"),
-//         createData(2, "https://placekitten.com/64/64", "lebao", "120728", "boy", "manager"),
-//         createData(3, "https://placekitten.com/64/64", "aibao", "130713", "girl", "ceo"),
-//     ]);
-// });
-// console.log("hello!!! from server!");
+app.get('/data', (req, res) => {
+    res.json({ message: "Hello from the backend! hohohoho!" });
+});
+
 app.listen(port, () => {
-    // console.log(`Listen on port ${port} hehehe`);
-})
+    console.log(`Server is running on port ${port}`);
+});
