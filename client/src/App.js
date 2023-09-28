@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { ProfilePage } from './components/ProfilePage';
 import { MainPage } from './components/MainPage';
+import { AddPandaPage } from './components/AddPandaPage';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/add" element={<AddPandaPage />} />
         </Routes>
       </Router>
     </div>
