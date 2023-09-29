@@ -1,10 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
-import profileReducer from './ProfileRedux';  
+import PandaReducer from './PandaRedux'; 
 
 export const store = configureStore({
   reducer: {
-    profile: profileReducer
+    panda: PandaReducer,
   }
-});
-
-export * from './ProfileRedux';
+}); 
+export * from './PandaRedux';

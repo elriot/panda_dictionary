@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { ProfilePage } from './components/ProfilePage';
 import { MainPage } from './components/MainPage';
 import { AddPandaPage } from './components/AddPandaPage';
+import { EditPandaPage } from './components/EditPandaPage';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
           <Route path="/" element={<MainPage />} />
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/add" element={<AddPandaPage />} />
+          <Route path="/editPanda/:id" component={<EditPandaPage/>} />
         </Routes>
       </Router>
     </div>

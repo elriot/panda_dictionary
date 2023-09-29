@@ -1,8 +1,15 @@
 const Panda = require("../models/panda");
 
-exports.getProfile = ((req, res) => {
+exports.getProfile = (async (req, res) => {
     console.log("Profile route hit!");
-    res.json({ message: "Hello from the backend! hohohoho! - request : profile" });
+    try{
+        const allPandas = await Panda.findAll({
+            attributes: { exclude: ['createdAt', 'updatedAt'] }
+        });
+        res.status(201).json(allPandas);
+    } catch (error) {
+        res.status(500).send(error.message);
+    }
 });
 
 exports.addPanda = (async (req, res) => {

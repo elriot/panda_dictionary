@@ -9,7 +9,7 @@ const Panda = sequelize.define("panda", {
     primaryKey: true,
   },
   name: Sequelize.STRING,
-  birthday: Sequelize.DATE,
+  birthday: Sequelize.DATEONLY,
   imageUrl : Sequelize.STRING,
   address:Sequelize.STRING,
   personality:Sequelize.STRING
