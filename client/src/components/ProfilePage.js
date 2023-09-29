@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProfile } from '../store/PandaRedux';
+import { Link } from 'react-router-dom';
 
 export const ProfilePage = () => {
     const dispatch = useDispatch();
@@ -18,11 +19,12 @@ export const ProfilePage = () => {
                             {Object.keys(data[0]).map(key => {
                                 return <th key={key}>{key}</th>;
                             })}
+                            <th>Edit</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {data.map((row, rowIndex) => (
-                            <tr key={rowIndex}>
+                        {data.map((row, idx) => (
+                            <tr key={idx}>
                                 {Object.entries(row).map(([key, value]) => {
                                     if (key === "imageUrl") {
                                         return (
@@ -33,6 +35,7 @@ export const ProfilePage = () => {
                                     }
                                     return <td key={key}>{value}</td>;
                                 })}
+                                <td><Link to={`/editPanda/${row.id}`}>Edit</Link></td>
                             </tr>
                         ))}
                     </tbody>

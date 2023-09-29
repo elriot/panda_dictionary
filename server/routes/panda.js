@@ -6,7 +6,10 @@ const pandaController = require('../controllers/panda');
 const router = express.Router();
 
 router.post('/add', pandaController.addPanda);
-router.get('/profile', pandaController.getProfile);
+router.get('/fetchAll', pandaController.fetchAll);
+router.get('/fetchById/:id', pandaController.fetchById);
+router.put('/edit', pandaController.editPanda);
+
 
 
 module.exports = router;
