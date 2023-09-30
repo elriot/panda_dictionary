@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { addPanda } from '../store/PandaRedux';
 import { useNavigate } from 'react-router-dom';
+import { clearPandaState } from '../store/PandaRedux';
 
 export const AddPandaPage = () => {
     const dispatch = useDispatch();
@@ -22,7 +23,8 @@ export const AddPandaPage = () => {
             alert(message);  // 메시지를 alert로 띄워줍니다
         }
         if (addedPanda) {
-            navigate('/');
+            dispatch(clearPandaState());
+            navigate('/profile');
         }
     }, [message, addedPanda, navigate]);
 

@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
-import { editPanda, fetchPandaById } from '../store/PandaRedux'; //
+import { editPanda, fetchPandaById, clearPandaState } from '../store/PandaRedux'; //
 import { useNavigate, useParams } from 'react-router-dom';
 
 export const EditPandaPage = () => {
@@ -10,7 +10,7 @@ export const EditPandaPage = () => {
     const { id } = useParams();
     const message = useSelector(state => state.panda.message);
     const pandaDataFromStore = useSelector(state => state.panda.panda);
-
+    
     const [formData, setFormData] = useState({
         name: '',
         birthday: '',
@@ -33,6 +33,7 @@ export const EditPandaPage = () => {
     useEffect(() => {
         if (message) {
             alert(message); 
+            dispatch(clearPandaState());
             navigate('/profile');
         }
     }, [navigate, message]);

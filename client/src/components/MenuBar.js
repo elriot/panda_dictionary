@@ -4,7 +4,8 @@ import './MenuBar.css';
 export const MenuBar = () => {
     const menuMap = {
         'Main' : '/main',
-        'Profile' : '/profile',            
+        'Profile' : '/profile', 
+        'Add' : '/add'           
     };
     return <div className="menu-container">
         {Object.entries(menuMap).map(([key, value]) => (

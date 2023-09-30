@@ -35,7 +35,12 @@ const pandaSlice = createSlice({
     panda: null,
     profile: []
   },
-  reducers: {},
+  reducers: {
+    clearPandaState: (state) => {
+      state.message = null;
+      state.panda = null;
+    }
+  },
   extraReducers: builder => {
     builder
     .addCase(addPanda.fulfilled, (state, action) => {
@@ -53,5 +58,5 @@ const pandaSlice = createSlice({
     });
   }
 });
-
+export const { clearPandaState } = pandaSlice.actions;
 export default pandaSlice.reducer;
