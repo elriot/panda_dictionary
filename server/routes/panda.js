@@ -9,6 +9,8 @@ router.post('/add', pandaController.addPanda);
 router.get('/fetchAll', pandaController.fetchAll);
 router.get('/fetchById/:id', pandaController.fetchById);
 router.put('/edit', pandaController.editPanda);
+router.delete('/delete/:id', pandaController.deletePanda);
+
 
 
 

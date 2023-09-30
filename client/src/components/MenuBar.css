@@ -1,7 +1,8 @@
 .menu-container{
     display: flex;
     flex-direction: row;
-    /* width: 100vw; */
-    /* align-items: center; */
-
+}
+.block{
+    padding-left: 20px;
+    padding-right: 20px;
 }

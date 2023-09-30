@@ -9,7 +9,7 @@ export const MenuBar = () => {
     };
     return <div className="menu-container">
         {Object.entries(menuMap).map(([key, value]) => (
-            <p key={key}>
+            <p className="block" key={key}>
                 <Link  to={value}>{key}</Link>
             </p>            
         ))}        

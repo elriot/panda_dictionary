@@ -14,6 +14,7 @@ function App() {
         <MenuBar />
         <Routes>
           <Route path="/" element={<MainPage />} />
+          <Route path="/main" element={<MainPage />} />
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/add" element={<AddPandaPage />} />
           <Route path="/editPanda/:id" element={<EditPandaPage />} />

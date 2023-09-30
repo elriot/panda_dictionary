@@ -12,11 +12,8 @@ export const fetchProfile = createAsyncThunk('panda/fetch', async () => {
   return response.data;
 });
 
-
-
-
 export const editPanda = createAsyncThunk('panda/edit', async (formData) => {
-  console.log(formData);
+  // console.log(formData);
   const response = await axios.put(`http://localhost:3001/panda/edit`, formData);
   return response.data;
 });
@@ -25,6 +22,15 @@ export const fetchPandaById = createAsyncThunk('panda/fetchById', async (id) => 
   console.log(id);
   const response = await axios.get(`http://localhost:3001/panda/fetchById/${id}`);
   return response.data;
+});
+
+export const deletePandaById = createAsyncThunk('panda/deleteById', async (id) => {
+  try {
+    const response = await axios.delete(`http://localhost:3001/panda/delete/${id}`);
+    return response.data;
+  } catch (error) {
+    throw Error(error.message); 
+  }
 });
 
 // Slice
@@ -55,6 +61,9 @@ const pandaSlice = createSlice({
     })
     .addCase(editPanda.fulfilled, (state, action) => {
       state.message = "updated!";
+    })
+    .addCase(deletePandaById.fulfilled, (state, action) => {
+      state.message = "deleted!";
     });
   }
 });
