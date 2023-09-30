@@ -4,16 +4,19 @@ import { ProfilePage } from './components/ProfilePage';
 import { MainPage } from './components/MainPage';
 import { AddPandaPage } from './components/AddPandaPage';
 import { EditPandaPage } from './components/EditPandaPage';
+import { MenuBar } from './components/MenuBar';
+import './App.css';
 
 function App() {
   return (
-    <div>
+    <div className='app'>
       <Router>
+        <MenuBar />
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/add" element={<AddPandaPage />} />
-          <Route path="/editPanda/:id" element={<EditPandaPage/>} />
+          <Route path="/editPanda/:id" element={<EditPandaPage />} />
         </Routes>
       </Router>
     </div>
