@@ -19,6 +19,7 @@ export const ProfilePage = () => {
     setIsModalVisible(false);
 		dispatch(deletePandaById(selectedPandaId))
 		.then(res=>{
+			console.log("confirm", res);
 			dispatch(clearPandaState());
 			dispatch(fetchProfile());
 		})

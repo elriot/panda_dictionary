@@ -1,7 +1,11 @@
-.app{
+.app {
     /* height: 100vh; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.routes-container {
+    padding-top: 20px;
 }
