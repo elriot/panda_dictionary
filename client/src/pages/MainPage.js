@@ -1,5 +1,7 @@
-export const MainPage = () =>{
-    return <div>
-        this is Main Page. Good
+import "./MainPage.css";
+
+export const MainPage = () =>{    
+    // const image = `/images/globe.jpg`;
+    return <div className="mainpage">
     </div>
 }

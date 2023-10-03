@@ -55,7 +55,7 @@ export const ProfilePage = () => {
 
 
   return (
-    <div>
+    <div style={{paddingTop: "40px"}}>
       {data && data.length > 0 ? (
         <div>
           <Modal

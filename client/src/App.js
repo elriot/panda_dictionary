@@ -12,7 +12,7 @@ function App() {
     <div className="app">
       <Router>
         <MenuBar />
-        <div className="routes-container">
+        <div>
           <Routes>
             <Route path="/" element={<MainPage />} />
             <Route path="/main" element={<MainPage />} />
