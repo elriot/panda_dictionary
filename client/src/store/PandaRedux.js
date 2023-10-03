@@ -54,6 +54,7 @@ const pandaSlice = createSlice({
       state.panda = action.payload;
     })
     .addCase(fetchProfile.fulfilled, (state, action) => {
+      // console.log(action);
       state.profile = action.payload;
     })
     .addCase(fetchPandaById.fulfilled, (state, action) => {

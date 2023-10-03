@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { ProfilePage } from "./components/ProfilePage";
-import { MainPage } from "./components/MainPage";
-import { AddPandaPage } from "./components/AddPandaPage";
-import { EditPandaPage } from "./components/EditPandaPage";
-import { MenuBar } from "./components/MenuBar";
+import { ProfilePage } from "./pages/ProfilePage";
+import { MainPage } from "./pages/MainPage";
+import { AddPandaPage } from "./pages/AddPandaPage";
+import { EditPandaPage } from "./pages/EditPandaPage";
+import { MenuBar } from "./pages/MenuBar";
 import "./App.css";
 
 function App() {

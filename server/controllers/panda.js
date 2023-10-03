@@ -5,6 +5,7 @@ exports.fetchAll = async (req, res) => {
     const allPandas = await Panda.findAll({
       attributes: { exclude: ["createdAt", "updatedAt"] },
     });
+    console.log(allPandas);
     res.status(201).json(allPandas);
   } catch (error) {
     res.status(500).send(error.message);
