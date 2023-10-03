@@ -1,16 +1,17 @@
 import { useEffect, useState, useMemo} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProfile, deletePandaById,clearPandaState} from "../store/PandaRedux";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Modal from "../components/Modal";
 import { Table } from "../components/Table";
+import { Button } from "../components/Button";
 
 export const ProfilePage = () => {
   const dispatch = useDispatch();
   const data = useSelector((state) => state.panda.profile);
   const [isModalVisible, setIsModalVisible] = useState(false);
-  const [selectedPandaId, setSelectedPandaId] = useState(null);
-  const navigate = useNavigate();
+  const [selectedPandaId, setSelectedPandaId] = useState(null); 
+  const navigate = useNavigate(); 
 
   const handleCloseModal = () => {
     setIsModalVisible(false);
@@ -42,8 +43,9 @@ export const ProfilePage = () => {
     return data.map((obj) => ({
       ...obj,
       imageUrl: <img src={obj.imageUrl} alt="panda" width="100" />,
-      edit: <Link to={`/editPanda/${obj.id}`}>Edit</Link>,
-      delete: <button onClick={() => handleClickDelete(obj.id)}>Delete</button>,
+      
+      edit: <Button onClick={()=>{navigate(`/editPanda/${obj.id}`)}} text="Edit"/>,
+      delete: <Button onClick={() => handleClickDelete(obj.id)} text="Delete"/>,
     }));
   }, [data]);
   
