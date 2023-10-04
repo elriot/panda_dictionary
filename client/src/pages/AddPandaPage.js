@@ -42,7 +42,7 @@ export const AddPandaPage = () => {
 
     return (
         <div>
-            <h1> - Add Panda Profile</h1>
+            <h1> Add Panda Profile</h1>
             <CustomForm onSubmit={handleSubmit}>
                 <label>
                     Name:

@@ -53,7 +53,7 @@ export const EditPandaPage = () => {
 
     return (
         <div>
-            <h1> - Edit Profile</h1>
+            <h1>Edit Profile</h1>
             <CustomForm onSubmit={handleSubmit}>
                 <label>
                     Name:

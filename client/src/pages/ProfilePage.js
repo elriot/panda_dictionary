@@ -42,7 +42,7 @@ export const ProfilePage = () => {
   const tableData = useMemo(() => {
     return data.map((obj) => ({
       ...obj,
-      imageUrl: <img src={obj.imageUrl} alt="panda" width="100" />,
+      imageUrl: <img src={obj.imageUrl} alt="panda" width="140" height="100%" />,
       
       edit: <Button onClick={()=>{navigate(`/editPanda/${obj.id}`)}} text="Edit"/>,
       delete: <Button onClick={() => handleClickDelete(obj.id)} text="Delete"/>,
