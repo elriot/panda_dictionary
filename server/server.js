@@ -15,13 +15,13 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-console.log("Here!");
+// console.log("Here!");
 app.use('/panda', pandaRoute);
 
 
 sequelize
 .sync()
-// .sync({ force: true })
+// .sync({ force: true }) // reset db for test
 .then(() => {
     app.listen(port, () => {
         console.log(`Server is running on port ${port}`);

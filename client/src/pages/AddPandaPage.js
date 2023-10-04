@@ -23,7 +23,7 @@ export const AddPandaPage = () => {
 
     useEffect(() => {
         if (message) {
-            alert(message);  // 메시지를 alert로 띄워줍니다
+            alert(message);
         }
         if (addedPanda) {
             dispatch(clearPandaState());

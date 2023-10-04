@@ -64,22 +64,22 @@ export const EditPandaPage = () => {
                     <input type="date" name="birthday" value={formData.birthday} onChange={handleChange} required />
                 </label>
                 <label>
+                    gender:
+                    <select name="gender" value={formData.gender} onChange={handleChange} required>
+                        {gender.map((curr, index) => (
+                            <option key={index} value={curr}>
+                                {curr}
+                            </option>
+                        ))}
+                    </select>
+                </label>
+                <label>
                     Image URL:
                     <input type="text" name="imageUrl" value={formData.imageUrl} onChange={handleChange} required />
                 </label>
                 <label>
                     Address:
                     <select name="address" value={formData.address} onChange={handleChange} required>
-                        {address.map((address, index) => (
-                            <option key={index} value={address}>
-                                {address}
-                            </option>
-                        ))}
-                    </select>
-                </label>
-                <label>
-                    gender:
-                    <select name="gender" value={formData.gender} onChange={handleChange} required>
                         {address.map((address, index) => (
                             <option key={index} value={address}>
                                 {address}
