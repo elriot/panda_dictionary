@@ -4,7 +4,7 @@ import { addPanda } from '../store/PandaRedux';
 import { useNavigate } from 'react-router-dom';
 import { clearPandaState } from '../store/PandaRedux';
 import { CustomForm } from '../components/CustomForm';
-import { address } from '../util/address';
+import { address, gender } from '../util/address';
 
 export const AddPandaPage = () => {
     const dispatch = useDispatch();
@@ -15,9 +15,10 @@ export const AddPandaPage = () => {
     const [formData, setFormData] = useState({
         name: '',
         birthday: '',
+        gender: gender[0],
         imageUrl: '',
-        address: '',
-        personality: ''
+        address: address[0],
+        personality: '',        
     });
 
     useEffect(() => {
@@ -37,6 +38,7 @@ export const AddPandaPage = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
+        // console.log("form", formData);
         dispatch(addPanda(formData));
     };
 
@@ -51,6 +53,16 @@ export const AddPandaPage = () => {
                 <label>
                     Birthday:
                     <input type="date" name="birthday" value={formData.birthday} onChange={handleChange} required />
+                </label>
+                <label>
+                    gender:
+                    <select name="gender" value={formData.gender} onChange={handleChange} required>
+                        {gender.map((gender, index) => (
+                            <option key={index} value={gender}>
+                                {gender}
+                            </option>
+                        ))}
+                    </select>
                 </label>
                 <label>
                     Image URL:

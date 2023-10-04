@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { editPanda, fetchPandaById, clearPandaState } from '../store/PandaRedux'; //
 import { useNavigate, useParams } from 'react-router-dom';
 import { CustomForm } from '../components/CustomForm';
-import { address } from '../util/address';
+import { address, gender } from '../util/address';
 
 export const EditPandaPage = () => {
     const dispatch = useDispatch();
@@ -70,6 +70,16 @@ export const EditPandaPage = () => {
                 <label>
                     Address:
                     <select name="address" value={formData.address} onChange={handleChange} required>
+                        {address.map((address, index) => (
+                            <option key={index} value={address}>
+                                {address}
+                            </option>
+                        ))}
+                    </select>
+                </label>
+                <label>
+                    gender:
+                    <select name="gender" value={formData.gender} onChange={handleChange} required>
                         {address.map((address, index) => (
                             <option key={index} value={address}>
                                 {address}

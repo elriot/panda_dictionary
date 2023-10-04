@@ -26,9 +26,10 @@ exports.fetchById = async (req, res) => {
 
 exports.addPanda = async (req, res) => {
   try {
-    const { name, birthday, imageUrl, address, personality } = req.body;
+    const { name, birthday, imageUrl, address, personality, gender } = req.body;
     const newPanda = await Panda.create({
       name,
+      gender,
       birthday,
       imageUrl,
       address,
@@ -42,14 +43,14 @@ exports.addPanda = async (req, res) => {
 
 exports.editPanda = async (req, res) => {
   try {
-    const { id, name, birthday, imageUrl, address, personality } = req.body;
+    const { id, name, birthday, imageUrl, address, personality, gender } = req.body;
 
     if (!id) {
       return res.status(400).json({ error: "ID is required" });
     }
 
     const updated = await Panda.update(
-      { name, birthday, imageUrl, address, personality },
+      { name, birthday, imageUrl, address, personality, gender },
       { where: { id: id } }
     );
 
